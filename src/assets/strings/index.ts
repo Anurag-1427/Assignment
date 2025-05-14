@@ -1,0 +1,15 @@
+export const strings = {
+    LOGIN_SCREEN_HEADING_TEXT: 'Welcome to react-native world',
+    LOGIN_SCREEN_SIGN_IN_TEXT: 'Sign in',
+    LOGIN_SCREEN_SIGN_IN_SUB_HEADING_TEXT: 'Hi! Welcome back, you’ve been missed',
+    LOGIN_SCREEN_TEXT_INPUT_PLACEHOLDER: 'Enter your mobile number',
+    PROCEED_TEXT: 'Proceed',
+    OTP_SCREEN_HEADING_TEXT: 'Almost ready to pour!',
+    OTP_SCREEN_SUB_HEADING_TEXT: 'Please enter the otp sent to your mobile no. ',
+    OTP_SCREEN_TEXT_INPUT_PLACEHOLDER: 'Enter OTP',
+    VERIFY_TEXT: 'Verify',
+    OTP_SCREEN_ALERT_MESSAGE: 'Invalid Number, Mobile number must be exactly 10 digits',
+    ERROR_TEXT: 'Error: ',
+    INDIAN_CURRENCY_SYMBOL: '₹',
+    ERROR_OCCURRED: 'Error occurred',
+}

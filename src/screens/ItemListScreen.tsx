@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, FlatList, Image, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, ActivityIndicator, ScrollView, Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductList } from '../redux/slices/productSlice';
 import { RootState } from '../redux/store';
@@ -18,6 +18,7 @@ export default function ItemListScreen() {
             dispatch(getProductList({ token, storeId: STORE_ID, categoryId: CATEGORY_ID }));
         } else {
             console.log('Token is missing, skipping product fetch');
+            Alert.alert(assets.strings.ERROR_OCCURRED);
         }
     }, [token]);
 
@@ -38,7 +39,7 @@ export default function ItemListScreen() {
                 >{item.category_name}</Text>
                 <Text
                     style={styles.horizontalListDetailItemDeliveryPriceText}
-                >₹ {item.delivery_price}</Text>
+                >{assets.strings.INDIAN_CURRENCY_SYMBOL} {item.delivery_price}</Text>
             </View>
         </View >
     )
@@ -65,7 +66,7 @@ export default function ItemListScreen() {
     }
     if (error) {
         return <Text style={styles.center}>
-            Error: {error}
+            {assets.strings.ERROR_TEXT} {error}
         </Text >;
     }
 
@@ -80,7 +81,6 @@ export default function ItemListScreen() {
                         renderItem={renderVerticalItem}
                     />
                 </View>
-
             </View>
         </ScrollView>
     );
@@ -94,9 +94,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        // borderWidth: 1,
         backgroundColor: assets.colors.appBgColor,
-        // padding: 20,
     },
     itemListScreenHeadingText: {
         textAlign: 'center',
@@ -119,7 +117,6 @@ const styles = StyleSheet.create({
         marginTop: 21,
     },
     horizontalListContainer: {
-        // borderWidth: 1,
         marginHorizontal: 10,
         width: 168,
         borderRadius: 20,

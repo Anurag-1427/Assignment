@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { setToken } from '../redux/slices/authSlice';
@@ -18,7 +18,6 @@ export default function OtpScreen() {
     const handleVerify = async () => {
         try {
             const res = await verifyOtp(mobile, otp);
-            console.log(`res: `, res)
             dispatch(setToken(res.data.token));
             navigation.navigate('Items' as never);
         } catch (err) {
@@ -42,20 +41,20 @@ export default function OtpScreen() {
             </View>
 
             <View style={styles.otpScreenHeadingContainer}>
-                <Text style={styles.otpScreenHeadingText}>Almost ready to pour!</Text>
+                <Text style={styles.otpScreenHeadingText}>{assets.strings.OTP_SCREEN_HEADING_TEXT}</Text>
             </View>
             <View style={styles.otpScreenSubHeadingContainer}>
-                <Text style={styles.otpScreenSubHeadingText}>Please enter the otp sent to your mobile no. {maskIndianMobileNumber(mobile)}</Text>
+                <Text style={styles.otpScreenSubHeadingText}>{assets.strings.OTP_SCREEN_SUB_HEADING_TEXT} {maskIndianMobileNumber(mobile)}</Text>
             </View>
 
             <TextInput
-                placeholder="Enter OTP"
+                placeholder={assets.strings.OTP_SCREEN_TEXT_INPUT_PLACEHOLDER}
                 value={otp}
                 onChangeText={setOtp}
                 keyboardType="numeric"
                 style={styles.input}
             />
-            <CustomButton btnText={'Verify'} btnPress={handleVerify} />
+            <CustomButton btnText={assets.strings.VERIFY_TEXT} btnPress={handleVerify} />
             {error ? <Text style={styles.error}>{error}</Text> : null}
         </View>
     );
@@ -65,7 +64,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        // borderWidth: 1,
         borderColor: 'red',
         backgroundColor: assets.colors.appBgColor,
     },
@@ -78,11 +76,9 @@ const styles = StyleSheet.create({
         marginTop: 63,
     },
     otpScreenHeadingContainer: {
-        // borderWidth: 1,
         width: '70%',
     },
     otpScreenHeadingText: {
-        // borderWidth: 1,
         fontWeight: '800',
         fontSize: 24,
         textTransform: 'uppercase',
@@ -90,7 +86,6 @@ const styles = StyleSheet.create({
         lineHeight: 42,
     },
     otpScreenSubHeadingContainer: {
-        // borderWidth: 1,
         width: '60%',
     },
     otpScreenSubHeadingText: {
@@ -102,7 +97,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         marginTop: 10,
-        // marginBottom: 10
     },
     error: { color: 'red' },
 });
