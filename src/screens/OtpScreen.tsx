@@ -48,7 +48,6 @@ export default function OtpScreen() {
                 <Text style={styles.otpScreenSubHeadingText}>Please enter the otp sent to your mobile no. {maskIndianMobileNumber(mobile)}</Text>
             </View>
 
-            {/* <Text>Mobile: {mobile}</Text> */}
             <TextInput
                 placeholder="Enter OTP"
                 value={otp}
@@ -57,7 +56,6 @@ export default function OtpScreen() {
                 style={styles.input}
             />
             <CustomButton btnText={'Verify'} btnPress={handleVerify} />
-            {/* <Button title="Verify OTP" onPress={handleVerify} /> */}
             {error ? <Text style={styles.error}>{error}</Text> : null}
         </View>
     );

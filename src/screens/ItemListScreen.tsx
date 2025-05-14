@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     horizontalListDetailItemCategoryNameText: {
         fontWeight: '400',
         fontSize: 14,
-        color: '#414141',
+        color: assets.colors.greyishTextColor,
     },
     horizontalListDetailItemDeliveryPriceText: {
         fontWeight: '700',

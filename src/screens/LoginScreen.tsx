@@ -47,7 +47,6 @@ export default function LoginScreen() {
                 </View>
             </View>
 
-            {/* <Button title="Get OTP" onPress={handleLogin} /> */}
             {error ? <Text style={styles.error}>{error}</Text> : null}
         </View >
     );
