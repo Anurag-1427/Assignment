@@ -73,8 +73,12 @@ const OtpScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Pressable onPress={() => navigation.goBack()} style={styles.backbtnContainer}>
-                <Icon name="arrow-left" size={20} color="#0D1318" />;
+            <Pressable onPress={() => navigation.goBack()}>
+                <View style={styles.backbtnContainer}>
+                    <Text>
+                        <Icon name="arrow-left" size={20} color="#0D1318" />
+                    </Text>
+                </View>
             </Pressable>
 
             <View style={styles.otpScreenHeadingContainer}>

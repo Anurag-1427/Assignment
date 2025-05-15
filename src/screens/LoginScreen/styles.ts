@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         backgroundColor: assets.colors.appBgColor,
+        justifyContent: 'space-around'
     },
     logoContainer: {
         borderColor: 'orange',
@@ -23,7 +24,8 @@ export const styles = StyleSheet.create({
         marginTop: 10,
     },
     signInContainer: {
-        marginTop: 210,
+        // marginTop: 120,
+        marginBottom: 15,
     },
     signInText: {
         textTransform: 'uppercase',

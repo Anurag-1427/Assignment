@@ -11,8 +11,8 @@ export const styles = StyleSheet.create({
     backbtnContainer: {
         borderWidth: 1, // important as per design
         width: '10%',
-        borderRadius: '50%',
-        padding: 7,
+        borderRadius: 100,
+        padding: 8,
         borderColor: assets.colors.greyBorderColor,
         marginTop: 63,
         alignItems: 'center',
