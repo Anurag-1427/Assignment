@@ -12,4 +12,6 @@ export const strings = {
     ERROR_TEXT: 'Error: ',
     INDIAN_CURRENCY_SYMBOL: '₹',
     ERROR_OCCURRED: 'Error occurred',
+    RESEND_CODE_TEXT: 'Resend code',
+    INVALID_OTP_CODE: 'Invalid OTP',
 }
